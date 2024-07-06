@@ -1,0 +1,21 @@
+services:
+  pytorch-test:
+    build: .
+    image: pytorch-test
+    container_name: pytorch-test
+    # command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu, compute, utility]
+
+    # 2022.02.15 device mounting no longer required with nvidia-container-toolkit 1.8.0
+    # devices:
+    #   - /dev/nvidia0:/dev/nvidia0
+    #   - /dev/nvidiactl:/dev/nvidiactl
+    #   - /dev/nvidia-modeset:/dev/nvidia-modeset
+    #   - /dev/nvidia-uvm:/dev/nvidia-uvm
+    #   - /dev/nvidia-uvm-tools:/dev/nvidia-uvm-tools
