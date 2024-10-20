@@ -6,7 +6,9 @@
         - `git remote update` (check for any updates)
         - `git pull` (if necessary)
         - `makepkg -sirc` (if necessary)
-    - if nvidia, docker, or linux kernel is updated, try running the
+    - restart system, especially if system-level stuff has been updated. (If
+      restart fails, check logs, diagnose, fix or rollback as necessary...)
+    - if nvidia, docker, or linux kernel has been updated, try running the
       test pytorch container, to ensure we still have gpu in docker.
       ```
       cd pytorch-gpu-test
