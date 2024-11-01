@@ -58,3 +58,26 @@ poetry config --list
     ```
     poetry run python --version
     ```
+
+# Rust
+
+* Use `pacman` to install `rustup`.
+    ```
+    pacman -S rustup
+    ```
+* Use `rustup` to install `rustc` and `cargo`. Follow official guides.
+
+# Python (NEW)
+
+* Consider migrating out of more complex `poetry` and `pyenv` workflow.
+* Use `pacman` to install `uv`.
+    ```
+    pacman -S uv
+    ```
+* Manage python projects using uv. Follow official guides.
+* `uv` takes care of:
+    * python versions
+    * virtual environments
+    * dependencies
+    * etc?
+
