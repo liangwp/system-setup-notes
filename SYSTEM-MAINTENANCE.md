@@ -15,8 +15,14 @@
       docker compose up --build
       ```
 1. Manage `*.pacnew` and `*.pacsave` files: https://wiki.archlinux.org/title/pacman/Pacnew_and_Pacsave
-1. clean up docker
-    - `df -h` (see if `/var` is filling up)
+1. Check `/var` directory size (for this system setup)
+    - `df -h /var`
+1. Clean up pacman cache (Take care of `/var`.)
+    - `paccache --dryrun --uninstalled`
+    - `paccache --remove --uninstalled`
+    - `paccache --dryrun --keep 3`
+    - `paccache --remove --keep 3`
+1. Clean up docker (Take care of `/var`.)
     - `docker system df`
     - `docker container prune`
     - `docker image prune` (maybe with `--all` flag)
